@@ -3,7 +3,7 @@ import json
 import requests
 from telegram import Message 
 
-bot = telebot.TeleBot(token = "1588761683:AAHmNd_hgN-1qdP51nMlg00upeq8eVpjXT8")
+bot = telebot.TeleBot(token = "TOKEN") # Here instead of TOKEN you should write your own token
 
 # Handler for command /start
 @bot.message_handler(commands = ['start'])
@@ -20,6 +20,7 @@ def get_url():
     return url
 
 # Handler for command /doggy
+# Instead of doggy you can write another command which you like
 @bot.message_handler(commands = ['doggy'])
 def do_doggy(message : Message):
     url = get_url()   
