@@ -11,7 +11,8 @@ def do_welcome(message : Message):
     bot.send_message(
         message.chat.id, 
         f"Hello my dear {message.from_user.last_name} \n I'm {bot.get_me().first_name} and I was created to give you sweet dogs! \n Type /doggy to get sweet! ")
-
+# Handler for alternations of the command /doggy
+# It suggests the correct version if it thinks you typed it wrong
 @bot.message_handler(commands = ['Doggy','dOggy','doGgy','doggY','DOggy','dOGgy','doGGy','dogGY','DoggY','DOGgy','dOGGy','doGGY','DogGY','DOggY','DOGGy','dOGGY','DoGGY','DOgGY','DOGgY','dogy','DOGY','dogi','DOGI','Dogu'])
 def wrong_type(message : Message):
     bot.send_message(message.chat.id, 'Hey, did you mean to type: /doggy ?')
