@@ -3,7 +3,7 @@ import json
 import requests
 from telegram import Message 
 
-bot = telebot.TeleBot(token = "TOKEN") # Here instead of TOKEN you should write your own token
+bot = telebot.TeleBot(token = "1541247093:AAENrppo0g7HoYWuylPR4o2u8pS2k8D4bEQ") # Here instead of TOKEN you should write your own token
 
 # Handler for command /start
 @bot.message_handler(commands = ['start'])
@@ -11,6 +11,10 @@ def do_welcome(message : Message):
     bot.send_message(
         message.chat.id, 
         f"Hello my dear {message.from_user.last_name} \n I'm {bot.get_me().first_name} and I was created to give you sweet dogs! \n Type /doggy to get sweet! ")
+
+@bot.message_handler(commands = ['Doggy','dOggy','doGgy','doggY','DOggy','dOGgy','doGGy','dogGY','DoggY','DOGgy','dOGGy','doGGY','DogGY','DOggY','DOGGy','dOGGY','DoGGY','DOgGY','DOGgY','dogy','DOGY','dogi','DOGI','Dogu'])
+def wrong_type(message : Message):
+    bot.send_message(message.chat.id, 'Hey, did you mean to type: /doggy ?')
 
 # Get images from random.dog to use them in our bot as a response to command  /doggy
 def get_url():
