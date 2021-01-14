@@ -1,7 +1,7 @@
 import telebot 
 from telegram import Message
 
-API_TOKEN = '1550470196:AAGnA1jL6Giv4b7cHqEahnqZeZV_h8mB60Y'
+API_TOKEN = <TOKEN>
 
 bot = telebot.TeleBot(API_TOKEN)
 
